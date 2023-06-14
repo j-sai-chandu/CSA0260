@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+    int s1,s2,m,i,j;
+    printf("enter the size of array 1:");
+    scanf("%d",&s1);
+    int a[s1];
+    for(i=0;i<s1;i++){
+        scanf("%d",&a[i]);
+    }
+    printf("enter the size of array 2:");
+    scanf("%d",&s2);
+    int b[s2];
+    for(i=0;i<s2;i++){
+        scanf("%d",&b[i]);
+    }
+    m=s1+s2;
+int c[m];
+   for(i=0;i<s1;i++){
+       c[i]=a[i];
+   }
+   for(j=0;j<s2;j++){
+       c[i++]=b[j];
+   }
+for(i=0;i<m;i++){
+       printf("%d ",c[i]);
+   }
+for(i=0;i<m-1;i++){
+    for(j=0;j<m-i-1;j++){
+        if(c[j]>c[j+1]){
+            int t=c[j];
+            c[j]=c[j+1];
+            c[j+1]=t;
+            
+        }
+    }
+}
+printf("\nsorted array:");
+for(i=0;i<m;i++){
+    printf("%d ",c[i]);
+}
+ }
